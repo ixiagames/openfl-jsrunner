@@ -20,22 +20,38 @@ class JSRunner {
             Reflect.setField(Browser.window, className, handle);
         }
 
-        for (script in scripts) {
+        var documentReady = Browser.document.readyState == "complete";
+        var loadedIndices = new Array<Int>();
+        var checkDispatchLoaded = () -> {
+            if (documentReady && loadedIndices.length == scripts.length) {
+                for (handle in handles)
+                    @:privateAccess handle.onJSRunnerLoaded();
+            }
+        }
+
+        if (!documentReady) {
+            Browser.document.onreadystatechange = () -> {
+                documentReady = Browser.document.readyState == "complete";
+                checkDispatchLoaded();
+            }
+        }
+
+        for (i in 0...scripts.length) {
             var elm = Browser.document.createScriptElement();
-            switch (script) {
+            switch (scripts[i]) {
                 case EXTL(src, defer):
-                    elm.src = src;
+                    elm.onload = (_) -> {
+                        loadedIndices.push(i);
+                        checkDispatchLoaded();
+                    };
                     elm.defer = defer;
+                    elm.src = src;
                 case INTL(script):
                     elm.text = script;
+                    loadedIndices.push(i);
             }
             Browser.document.head.appendChild(elm);
         }
-
-        Browser.window.onload = () -> {
-            for (handle in handles)
-                @:privateAccess handle.onJSRunnerLoaded();
-        };
     }
 
 }
