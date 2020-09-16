@@ -25,7 +25,7 @@ class JSRunner {
         var checkDispatchLoaded = () -> {
             if (documentReady && loadedIndices.length == scripts.length) {
                 for (handle in handles)
-                    @:privateAccess handle.onJSRunnerLoaded();
+                    @:privateAccess handle.onJSRunnerReady();
             }
         }
 

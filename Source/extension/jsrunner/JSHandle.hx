@@ -18,6 +18,6 @@ interface JSHandle {
     private function ___returnString(value:String):Void;
     #end
 
-    private function onJSRunnerLoaded():Void;
+    private function onJSRunnerReady():Void;
 
 }

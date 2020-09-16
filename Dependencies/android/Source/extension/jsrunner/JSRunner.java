@@ -76,7 +76,7 @@ public class JSRunner extends Extension {
 					if (!inited) {
 						inited = true;
 						for (int i = 0; i < hxHandles.size(); i++)
-							hxHandles.get(i).call0("onJSRunnerLoaded");
+							hxHandles.get(i).call0("onJSRunnerReady");
 					}
 				}
 
