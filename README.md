@@ -12,7 +12,7 @@ This lets you use JS codes & libraries in your native OpenFL Android apps. The t
 
 **How to use:**
 
-- Clone this somewhere and use add `<include path="cloned_path/openfl-jsrunner" />` to your `project.xml`.
+- Clone this somewhere and add `<include path="cloned_path/openfl-jsrunner" />` to your `project.xml`.
 
 - Create a class implementing `extension.jsrunner.JSHandle`.
 
