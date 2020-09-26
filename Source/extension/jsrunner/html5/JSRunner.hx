@@ -5,7 +5,7 @@ import js.Browser;
 
 class JSRunner {
     
-    public static function init(scripts:Array<Script>, handles:Array<JSHandle>):Void {
+    public static function init(scripts:Array<JSSource>, handles:Array<JSHandle>):Void {
         var elm = Browser.document.createScriptElement();
         elm.text = "
             window.JSRunner = {};

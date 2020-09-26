@@ -1,6 +1,6 @@
 package extension.jsrunner;
 
-enum Script {
+enum JSSource {
 
     INTL(content:String);
     EXTL(src:String, defer:Bool);

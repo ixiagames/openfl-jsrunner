@@ -17,7 +17,7 @@ class JSRunner {
 
     public static var inited(default, null):Bool = false;
 
-    public static function init(scripts:Array<Script>, handles:Array<JSHandle>):Void {
+    public static function init(scripts:Array<JSSource>, handles:Array<JSHandle>):Void {
         if (inited) 
             throw "Trying to init JSRunner twice.";
         
