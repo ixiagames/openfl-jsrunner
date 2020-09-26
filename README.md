@@ -12,6 +12,8 @@ This lets you use JS codes & libraries in your native OpenFL Android apps. The t
 
 **How to use:**
 
+- Clone this somewhere and use add `<include path="cloned_path/openfl-jsrunner" />` to your `project.xml`.
+
 - Create a class implementing `extension.jsrunner.JSHandle`.
 
 - Init JSRunner with your JS sources (internal or external) and an instance of the created class.
