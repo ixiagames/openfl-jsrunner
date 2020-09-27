@@ -24,8 +24,7 @@ This lets you use JS codes & libraries in your native OpenFL Android apps. The t
 
 - Member methods with `@jscall` (requires empty bodies) can be used in Haxe to call functions in JS sources if they are properties of `window.ClassName`.
 
-- `@jsinterface` and `@jscall` methods allow usage of `Bool`, `Int`, `Float`, `String` and `Array` of these types.
-
+- Arguments and returned values of `@jsinterface` and `@jscall` methods can be of types `Bool`, `Int`, `Float`, `String` and `Array` of those types.
 
 ***Example:***
 
