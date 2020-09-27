@@ -60,7 +60,7 @@ class Main extends openfl.display.DisplayObjectContainer implements extension.js
 
     @jscall function getWelcomeMsg():String;
     @jscall function signIn(email:String):Void;
-    @jscall function getPassword():String return "hunter2";
+    @jsinterface function getPassword():String return "hunter2";
     @jsinterface function onSignedIn(message:String):Void trace(message);
 
 }
